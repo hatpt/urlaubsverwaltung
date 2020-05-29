@@ -21,6 +21,7 @@ public enum ApplicationAction {
     REJECTED,
     CANCELLED,
     CANCEL_REQUESTED,
+    CANCEL_REQUESTED_CANCELLED,
     REVOKED,
     REFERRED,
     EDITED

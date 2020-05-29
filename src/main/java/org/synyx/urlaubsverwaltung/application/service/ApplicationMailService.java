@@ -165,6 +165,29 @@ class ApplicationMailService {
         mailService.send(mailToApplicant);
     }
 
+    void sendCancelledCancellationRequestApplicationNotification(Application application, Person recipient){
+
+        Map<String, Object> model = new HashMap<>();
+        model.put(APPLICATION, application);
+        model.put("recipient", recipient);
+
+        // send mail to applicant
+        final Mail mailToApplicant = Mail.builder()
+            .withRecipient(recipient)
+            .withSubject("subject.application.cancellationRequestCancelled.applicant", application.getPerson().getNiceName())
+            .withTemplate("application_cancellation_request_cancelled_applicant", model)
+            .build();
+        mailService.send(mailToApplicant);
+
+        // send cancelled cancellation request information to the office
+        final List<Person> relevantRecipientsToInform = applicationRecipientService.getRecipientsWithOfficeNotifications();
+        final Mail mailToOffice = Mail.builder()
+            .withRecipient(relevantRecipientsToInform)
+            .withSubject("subject.application.cancellationRequestCancelled.management")
+            .withTemplate("application_cancellation_request_cancelled_management", model)
+            .build();
+        mailService.send(mailToOffice);
+    }
 
     /**
      * Sends mail to office and informs about
