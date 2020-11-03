@@ -152,6 +152,12 @@ td.datepicker-day {
   opacity: 0.8;
 }
 
+.datepicker-day-weekend {
+  --background-color-left: #b5d0df;
+  --background-color-right: #b5d0df;
+  --font-color: #fff;
+}
+
 .datepicker-day-personal-holiday-morning {
   --background-color-left: #ffe165;
 }
@@ -289,7 +295,6 @@ td.datepicker-day {
 
 /* public holidays must be the last calendar day treatment */
 /* to override all other absences */
-/* note: except for weekend which follows beneath */
 .datepicker-day-public-holiday-morning {
   --background-color-left: #b5d0df;
   --font-color: #6f6f6f;
@@ -322,14 +327,6 @@ td.datepicker-day {
 }
 .datepicker-day-public-holiday-noon.datepicker-day-past {
   --font-color: #afafaf;
-}
-
-/* weekend has to override every other absence day stuff */
-.datepicker-day-weekend {
-  --background-color-left: #b5d0df;
-  --background-color-right: #b5d0df;
-  /* important is required since `.datepicker-day-public-holiday-noon.datepicker-day-past` is a more specific selector which wins otherwise */
-  --font-color: #fff !important;
 }
 
 /**************************************************************************

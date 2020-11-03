@@ -128,31 +128,31 @@ $(function () {
         return holidayService.isPublicHolidayNoon(date);
       },
       isPersonalHolidayFull: function (date) {
-        return !isWeekend(date) && holidayService.isPersonalHolidayFull(date);
+        return holidayService.isPersonalHolidayFull(date);
       },
       isPersonalHolidayFullApproved: function (date) {
-        return !isWeekend(date) && holidayService.isPersonalHolidayFullApproved(date);
+        return holidayService.isPersonalHolidayFullApproved(date);
       },
       isPersonalHolidayMorning: function (date) {
-        return !isWeekend(date) && holidayService.isPersonalHolidayMorning(date);
+        return holidayService.isPersonalHolidayMorning(date);
       },
       isPersonalHolidayMorningApproved: function (date) {
-        return !isWeekend(date) && holidayService.isPersonalHolidayMorningApproved(date);
+        return holidayService.isPersonalHolidayMorningApproved(date);
       },
       isPersonalHolidayNoon: function (date) {
-        return !isWeekend(date) && holidayService.isPersonalHolidayNoon(date);
+        return holidayService.isPersonalHolidayNoon(date);
       },
       isPersonalHolidayNoonApproved: function (date) {
-        return !isWeekend(date) && holidayService.isPersonalHolidayNoonApproved(date);
+        return holidayService.isPersonalHolidayNoonApproved(date);
       },
       isSickDayFull: function (date) {
-        return !isWeekend(date) && holidayService.isSickDayFull(date);
+        return holidayService.isSickDayFull(date);
       },
       isSickDayMorning: function (date) {
-        return !isWeekend(date) && holidayService.isSickDayMorning(date);
+        return holidayService.isSickDayMorning(date);
       },
       isSickDayNoon: function (date) {
-        return !isWeekend(date) && holidayService.isSickDayNoon(date);
+        return holidayService.isSickDayNoon(date);
       },
       title: function (date) {
         return holidayService.getDescription(date);
